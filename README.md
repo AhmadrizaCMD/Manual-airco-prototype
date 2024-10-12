@@ -67,10 +67,10 @@ make sure they are all properly connected otherwise they won't do it later when 
 - Open de Arduino IDE en ga naar File > Examples > ESP8266 > EchoBot.
 - remove the example code
 - Copy and paste this code
-- At #define WIFI_SSID“” and #Define WIFI_PASSWORD “” change your own wifi data
-- then put by #define BOT_TOKEN "" your token from the telgram bot you have make
-- By String city = "";  Replace with your city
-- By String apiKey = ""; Replace with your OpenWeatherMap API-key
+- At #define WIFI_SSID“” and #Define WIFI_PASSWORD “” **change your own wifi data**
+- then put by #define BOT_TOKEN "" **your token from the telgram bot you have make**
+- By String city = "";  **Replace with your city**
+- By String apiKey = ""; **Replace with your OpenWeatherMap API-key**
 <img width="500" alt="Scherm­afbeelding 2024-10-12 om 17 24 53" src="https://github.com/user-attachments/assets/396a8234-3d08-4fec-9a08-8b0cf501017f">
 
 ## Upload de code to the ESP8266
