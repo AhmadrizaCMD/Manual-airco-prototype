@@ -30,11 +30,11 @@ For connecting the Button to the ESP you have a table here:
 make sure they are all properly connected otherwise they won't do it later when running code 
 
 
-## make a telegram account
+## make a Telegram account
 - Download the Telegram app on your smartphone or use the desktop version.
 - Create an account by registering your phone number and following the instructions.
 
-## make a telegram bot
+## make a Telegram bot
 - Search for the bot named BotFather in the Telegram app.
 - Start a chat with BotFather and follow the instructions to create a new bot.
 - After creating the bot, you will receive a unique API key (bot token). Keep this, as you will need it in your code to connect the bot.
