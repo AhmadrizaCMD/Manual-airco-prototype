@@ -66,7 +66,209 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 - Open de Arduino IDE en ga naar File > Examples > ESP8266 > EchoBot.
 - remove the example code
-- Copy and paste this code
+- Copy and paste this code:
+<details>
+<summary>click here to copy the code</summary>
+
+```cpp
+#include <ESP8266WiFi.h>
+#include <WiFiClientSecure.h>
+#include <UniversalTelegramBot.h>
+#include <Adafruit_NeoPixel.h>    // Voeg de NeoPixel library toe
+
+// Wifi network station credentials
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
+// Telegram BOT Token (Get from Botfather)
+#define BOT_TOKEN ""
+
+// OpenWeatherMap API-instellingen
+const char* server = "api.openweathermap.org";
+String city = "Amsterdam,NL";        // Vervang door jouw stad
+String apiKey = "";      // Vervang door jouw OpenWeatherMap API-sleutel
+
+const unsigned long BOT_MTBS = 5000;   // Tijd tussen berichten checks (in milliseconden)
+
+X509List cert(TELEGRAM_CERTIFICATE_ROOT);
+WiFiClientSecure secured_client;
+UniversalTelegramBot bot(BOT_TOKEN, secured_client);
+WiFiClient client;
+
+unsigned long bot_lasttime = 0;         // Variabele om de tijd van de laatste Telegram-berichten-check bij te houden
+
+// LED-strip instellingen
+#define LED_STRIP_PIN D2               // Pin voor de LED-strip
+#define NUM_LEDS 8                     // Aantal LEDs op de strip
+Adafruit_NeoPixel strip(NUM_LEDS, LED_STRIP_PIN, NEO_GRB + NEO_KHZ800);
+
+// Knopinstellingen
+#define BUTTON_PIN D1                  // Pin voor de knop
+bool ledStatus = false;                // Houd bij of de LED-strip aan of uit is
+bool lastButtonState = HIGH;           // Vorige status van de knop (gestart als niet-ingedrukt)
+bool apiEnabled = true;                // Variabele om te controleren of de API actief is
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println();
+
+  // Verbinding maken met het Wifi-netwerk
+  Serial.print("Connecting to Wifi SSID ");
+  Serial.print(WIFI_SSID);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  secured_client.setTrustAnchors(&cert);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+  Serial.print("\nWiFi connected. IP address: ");
+  Serial.println(WiFi.localIP());
+
+  // LED- en knopinitialisatie
+  strip.begin();
+  strip.show();
+
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+  // Tijd instellen via NTP
+  configTime(0, 0, "pool.ntp.org");
+  time_t now = time(nullptr);
+  while (now < 24 * 3600) {
+    delay(100);
+    now = time(nullptr);
+  }
+}
+
+void loop() {
+  // Controleer op nieuwe Telegram-berichten
+  if (millis() - bot_lasttime > BOT_MTBS) {
+    int numNewMessages = bot.getUpdates(bot.last_message_received + 1);
+    while (numNewMessages) {
+      handleNewMessages(numNewMessages);
+      numNewMessages = bot.getUpdates(bot.last_message_received + 1);
+    }
+    bot_lasttime = millis();
+  }
+
+  // Controleer op weerupdate als de API actief is
+  if (apiEnabled) {
+    getWeatherData();
+  }
+
+  // Knop polling
+  checkButton();
+}
+
+void getWeatherData() {
+  if (client.connect(server, 80)) {
+    Serial.println("Connected to weather server");
+    client.println("GET /data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric HTTP/1.1");
+    client.println("Host: api.openweathermap.org");
+    client.println("Connection: close");
+    client.println();
+
+    unsigned long timeout = millis();
+    while (client.available() == 0) {
+      if (millis() - timeout > 5000) {
+        Serial.println(">>> Client Timeout!");
+        client.stop();
+        return;
+      }
+    }
+
+    String line;
+    while (client.available()) {
+      line = client.readStringUntil('\n');
+      if (line.startsWith("{")) {
+        parseWeatherData(line);
+        break;
+      }
+    }
+  } else {
+    Serial.println("Connection to weather server failed");
+  }
+}
+
+void parseWeatherData(String jsonString) {
+  DynamicJsonDocument doc(1024);
+  DeserializationError error = deserializeJson(doc, jsonString);
+
+  if (error) {
+    Serial.print("JSON parsing failed: ");
+    Serial.println(error.c_str());
+    return;
+  }
+
+  float temperature = doc["main"]["temp"];
+  Serial.print("Current temperature: ");
+  Serial.println(temperature);
+
+  // LED-strip activeren bij temperaturen boven 20 graden
+  if (temperature < 20.0) { // Stel de temperatuurdrempel in
+    setStripColor(0, 0, 255);  // blauw als temperatuur te hoog is
+    Serial.println("LED on (cold)");
+  } else {
+    setStripColor(0, 0, 0);    // LED uit bij hogere temperatuur
+    Serial.println("LED off (warm)");
+  }
+}
+
+void setStripColor(uint8_t r, uint8_t g, uint8_t b) {
+  for (int i = 0; i < NUM_LEDS; i++) {
+    strip.setPixelColor(i, strip.Color(r, g, b));
+  }
+  strip.show();
+}
+
+void checkButton() {
+  bool buttonState = digitalRead(BUTTON_PIN);
+  // Controleer of de knop is ingedrukt
+  if (buttonState == LOW && lastButtonState == HIGH) {
+    // Toggle de LED status en API aan/uit logica
+    if (!apiEnabled && !ledStatus) {
+      ledStatus = true; // Zet de airco aan zonder API in te schakelen
+      setStripColor(255, 255, 255); // Zet LED aan
+      Serial.println("Button pressed, LED on and API remains disabled");
+    } else {
+      apiEnabled = false; // Zet de API uit wanneer de knop wordt ingedrukt
+      ledStatus = !ledStatus; // Toggle de LED status
+      if (ledStatus) {
+        setStripColor(255, 255, 255); // Zet LED aan
+        Serial.println("Button pressed, LED on and API disabled");
+      } else {
+        setStripColor(0, 0, 0); // Zet LED uit
+        Serial.println("Button pressed, LED off and API disabled");
+      }
+    }
+  }
+  lastButtonState = buttonState; // Update de vorige knopstatus
+}
+
+void handleNewMessages(int numNewMessages) {
+  for (int i = 0; i < numNewMessages; i++) {
+    String message = bot.messages[i].text;
+    Serial.print("Received message: ");
+    Serial.println(message);
+
+    // Reactie op Telegram berichten
+    if (message == "airco on") {
+      ledStatus = true;
+      setStripColor(255, 255, 255);
+      bot.sendMessage(bot.messages[i].chat_id, "airco is nu aan!", "");
+    } else if (message == "airco off") {
+      ledStatus = false;
+      setStripColor(0, 0, 0);
+      bot.sendMessage(bot.messages[i].chat_id, "airco is nu uit!", "");
+    } else if (message == "API") {
+      apiEnabled = true;  // Zet de API weer aan
+      bot.sendMessage(bot.messages[i].chat_id, "API is nu ingeschakeld!", "");
+      Serial.println("API enabled by Telegram command.");
+    } else {
+      bot.sendMessage(bot.messages[i].chat_id, "Ik begrijp het niet. Typ 'airco on' om de LED-strip aan te zetten of 'airco off' om hem uit te zetten.", "");
+    }
+  }
+}
+
 - At #define WIFI_SSID“” and #Define WIFI_PASSWORD “” **change your own wifi data**
 - then put by #define BOT_TOKEN "" **your token from the telgram bot you have make**
 - By String city = "";  **Replace with your city**
@@ -113,6 +315,9 @@ You should see a confirmation in the serial monitor that the bot is active.
 - If the API is disabled then you could manually press the button so that it comes back on. Note that the API is then disabled and the LED turns white in color.
 
 <img width="1394" alt="Scherm­afbeelding 2024-10-12 om 15 16 28" src="https://github.com/user-attachments/assets/fbe6b377-783f-4cbe-936f-bccc6e6f1a65">
+
+
+ 
 
 
 
