@@ -86,6 +86,35 @@ make sure they are all properly connected otherwise they won't do it later when 
 - Check if any error messages appear. If any strange characters appear, check your WiFi credentials:
 - Make sure you have entered the correct SSID and password.
 
+## fix errors troubleshooting:
+If no connection is made to the esp8266 check the following:
+
+- check that you have entered the correct wifi data
+- If you are on a hotspot try using a wifi network
+- Make sure you have connected the right pins 
+
+If the API is not working then in the serial monitor you will see “client not detect” check:
+- if you copied and pasted the correct API key. 
+- Otherwise create a new key and try that.
+
+## LED on
+
+If all goes well, the LED is now connected to the API and if the temperature is above this many degrees the LED turns blue. 
+
+## Start a conversation with the Telegram bot
+
+- Start a chat with your bot in Telegram.
+You should see a confirmation in the serial monitor that the bot is active.
+- Now if you write “airco off” in the Telegram bot then the LED would now turn off and you will see in the serial monitor that this it is actually off. If you want to turn it on again then write “airco on”. - Note that if you write “airco off” then the API is no longer active. If you want to activate the API again then write “API” then the API is on again and the LED turns blue at the given value.
+- If the LED is enabled then the LED is blue if you control the LED via telegram then it is white so you can distinguish when the API is enabled or not.
+
+## Button click
+
+- If the API is disabled then you could manually press the button so that it comes back on. Note that the API is then disabled and the LED turns white in color.
+
+<img width="1394" alt="Scherm­afbeelding 2024-10-12 om 15 16 28" src="https://github.com/user-attachments/assets/fbe6b377-783f-4cbe-936f-bccc6e6f1a65">
+
+
 
 
 
