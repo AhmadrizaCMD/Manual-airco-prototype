@@ -81,11 +81,10 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 ## open the serial monitor
 
-- Open de seriële monitor in de Arduino IDE by clicking right above on the magnifying glass.
-- Stel de baudrate in op 115200.
-- Controleer of er foutmeldingen verschijnen. Als er vreemde tekens verschijnen, controleer dan je WiFi-gegevens:
-- Zorg ervoor dat je de juiste SSID en wachtwoord hebt ingevoerd.
-
+- Open the serial monitor in the Arduino IDE by clicking right above on the magnifying glass.
+- Set the baud rate to 115200.
+- Check if any error messages appear. If any strange characters appear, check your WiFi credentials:
+- Make sure you have entered the correct SSID and password.
 
 
 
