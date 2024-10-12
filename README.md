@@ -58,9 +58,17 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 - ga naar [OpenWeatherMap](https://home.openweathermap.org/)
 - create een account door je gegevens in te voeren
-- Als je een account heb ga je naar de dropdown van je naam en klik je op “My API keys” 
-- Als je een Key wilt toevoegen dan zet je een naam hier en klik je op generate
+- Als je een account heb ga je naar de dropdown van je naam en klik je op “My API keys”
+<img width="350" alt="Scherm­afbeelding 2024-10-12 om 19 45 36" src="https://github.com/user-attachments/assets/4e097ae9-659f-4a29-bcf1-db3f164c3581">
+
+- Als je een Key wilt toevoegen dan zet je een naam hier en klik je op generate 
+<img width="350" alt="Scherm­afbeelding 2024-10-12 om 19 49 53" src="https://github.com/user-attachments/assets/16719433-5979-4df4-9674-22b2a3874324">
+
+
 - Nu komt de API key hier te staan deze heb je later nodig
+<img width="350" alt="Scherm­afbeelding 2024-10-12 om 19 46 52" src="https://github.com/user-attachments/assets/3d08dec6-200c-40d7-ab03-aa8bb480fd7f">
+
+
 
 ## write the code
 
@@ -271,18 +279,28 @@ void handleNewMessages(int numNewMessages) {
 - then put by #define BOT_TOKEN "" **your token from the telgram bot you have make**
 - By String city = "";  **Replace with your city**
 - By String apiKey = ""; **Replace with your OpenWeatherMap API-key**
-<img width="500" alt="Scherm­afbeelding 2024-10-12 om 17 24 53" src="https://github.com/user-attachments/assets/396a8234-3d08-4fec-9a08-8b0cf501017f">
+<img width="500" alt="Scherm­afbeelding 2024-10-12 om 19 55 07" src="https://github.com/user-attachments/assets/8af87c4f-b09b-4ce5-828e-67480dd6da53">
 
 ## Upload de code to the ESP8266
 - Connect your ESP8266 to the computer.
-- Choose the correct board and port in the Arduino IDE.
+- Choose the correct board and port in the Arduino IDE. (**tools> board > esp8266 > NodeMCU 1.0 (module12)**)
+<img width="500" alt="Scherm­afbeelding 2024-10-12 om 19 59 58" src="https://github.com/user-attachments/assets/a0bcf700-d5f6-4d0d-92e5-544ee66f5bd0">
+
 - Click the upload button to upload the code to your ESP8266.
+<img width="604" alt="Scherm­afbeelding 2024-10-12 om 20 07 55" src="https://github.com/user-attachments/assets/41800265-cf1b-4aba-8d51-17f70040c20a">
+
 
 
 ## open the serial monitor
 
 - Open the serial monitor in the Arduino IDE by clicking right above on the magnifying glass.
-- Set the baud rate to 115200.
+<img width="601" alt="Scherm­afbeelding 2024-10-12 om 20 08 00" src="https://github.com/user-attachments/assets/2e3bcaf3-bfcd-43fd-b98e-6e15001d775f">
+
+
+
+- On the right side click on the dropdown ans Set the baud rate to 115200.
+<img width="250" alt="Scherm­afbeelding 2024-10-12 om 20 10 40" src="https://github.com/user-attachments/assets/3abc4b4c-1633-4834-8b39-cfded2d99384">
+ 
 - Check if any error messages appear. If any strange characters appear, check your WiFi credentials:
 - Make sure you have entered the correct SSID and password.
 
