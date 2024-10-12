@@ -67,10 +67,7 @@ make sure they are all properly connected otherwise they won't do it later when 
 - Open de Arduino IDE en ga naar File > Examples > ESP8266 > EchoBot.
 - remove the example code
 - Copy and paste this code:
-<details>
-<summary>click here to copy the code</summary>
-
-```cpp
+```
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <UniversalTelegramBot.h>
@@ -268,6 +265,7 @@ void handleNewMessages(int numNewMessages) {
     }
   }
 }
+```
 
 - At #define WIFI_SSID“” and #Define WIFI_PASSWORD “” **change your own wifi data**
 - then put by #define BOT_TOKEN "" **your token from the telgram bot you have make**
