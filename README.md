@@ -6,12 +6,13 @@ In this document you will learn how to control the LED using a weather API. you 
 
 ## Requirements
 
-- Esp82666
+- Esp82666 
 - LED
-- Button
-- Laptop
+- Push Button sensor
+- Laptop 
 - phone
-- Wires 
+- Wires
+- USB cable
 
 ## Step 1 Connecting Hardware
 For connecting the LED to the ESP you have a table here:
