@@ -45,9 +45,15 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 ## make a Telegram bot
 - Search for the bot named BotFather in the Telegram app.
-- Start a chat with BotFather and follow the instructions to create a new bot.
+- Start a chat with BotFather and follow the instructions to create a new bot(start conversation with the bot and make up a name for your bot that is not already in use). if a name is already in use you will see a notification like below that it is already in use and then you can make up another name.
+<img width="303" alt="Scherm­afbeelding 2024-10-13 om 20 55 01" src="https://github.com/user-attachments/assets/1bf65348-572d-4be9-80cd-80bd64b8f8d5">
+
+  
 - After creating the bot, you will receive a unique API key (bot token). Keep this, as you will need it in your code to connect the bot.
  follow.
+<img width="265" alt="Scherm­afbeelding 2024-10-13 om 20 52 32" src="https://github.com/user-attachments/assets/b99d2272-47a3-48e5-8c35-2322abf9ed09">
+
+
 - Note that this is how you select the bot and not the bothfather so in this case “drizzle bot”
 <img width="266" alt="Scherm­afbeelding 2024-10-13 om 16 33 52" src="https://github.com/user-attachments/assets/b2985a0b-35b2-449e-b1ab-767b6a8e0d90">
 
