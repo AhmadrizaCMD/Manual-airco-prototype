@@ -358,7 +358,11 @@ You should see a confirmation in the serial monitor that the bot is active.
 https://github.com/user-attachments/assets/bb536389-d519-4cdb-8eaa-511a18929e37
 
 
- ## Experiment
+ ## troubleshooting Experiment summary 
+
+Managed to link the API to the LED and through the telegram bot turn the LED on and off through commands. Also managed to link the button to the LED to turn it on and off manually.
+
+The only thing now is that the LED now turns on and off with a Delay. I tried reducing the Delay that worked a little better but still not as smooth. It could also be that because the esp8266 works with 3 volts that it then works it with less current and that is why it displays a Delay.
 
 
 
