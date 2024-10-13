@@ -29,6 +29,12 @@ For connecting the Button to the ESP you have a table here:
 
 make sure they are all properly connected otherwise they won't do it later when running code 
 
+<img width="350" alt="unnamed-8" src="https://github.com/user-attachments/assets/bbd5f6a9-5bef-4656-904b-c12bcd720377">
+
+<img width="350" alt="unnamed-7" src="https://github.com/user-attachments/assets/c7ac6901-fa77-40b5-a29f-634a937e5165">
+
+
+
 
 ## make a Telegram account
 - Download the Telegram app on your smartphone or use the desktop version.
@@ -347,7 +353,13 @@ You should see a confirmation in the serial monitor that the bot is active.
 
  ## Demonstration
 
- 
+<img width="600" alt="Scherm­afbeelding 2024-10-13 om 13 28 37" src="https://github.com/user-attachments/assets/bf484ee4-4156-43d4-b058-538ef3783a15">
+
+https://github.com/user-attachments/assets/bb536389-d519-4cdb-8eaa-511a18929e37
+
+
+ ## Experiment
+
 
 
 
