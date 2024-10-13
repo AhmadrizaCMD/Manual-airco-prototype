@@ -49,7 +49,9 @@ make sure they are all properly connected otherwise they won't do it later when 
 - After creating the bot, you will receive a unique API key (bot token). Keep this, as you will need it in your code to connect the bot.
  follow.
 - Note that this is how you select the bot and not the bothfather so in this case “drizzle bot”
-<img src="https://github.com/user-attachments/assets/2a7bc7d9-1d25-4cab-b5bc-9b7aeec2ddb4" alt="IMG_6610" width="200" />
+<img width="266" alt="Scherm­afbeelding 2024-10-13 om 16 33 52" src="https://github.com/user-attachments/assets/b2985a0b-35b2-449e-b1ab-767b6a8e0d90">
+
+
 
 ## Install the libraries
 - Make sure you have the appropriate Arduino libraries installed. You need at least the following libraries:
