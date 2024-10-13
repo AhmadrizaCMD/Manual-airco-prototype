@@ -329,9 +329,11 @@ If the API is not working then in the serial monitor you will see “client not 
 - if you copied and pasted the correct API key. 
 - Otherwise create a new key and try that.
 
-## LED on
+## LED on API
 
-If all goes well, the LED is now connected to the API and if the temperature is above this many degrees the LED turns blue. 
+If all goes well, the LED is now connected to the API and if the temperature is above this many degrees the LED turns blue. you can see in the serial monitor it says it is connected to the esp8266 and it is connected to the API “connection to weather server”.
+
+<img width="600" alt="Scherm­afbeelding 2024-10-13 om 13 28 37" src="https://github.com/user-attachments/assets/bf484ee4-4156-43d4-b058-538ef3783a15">
 
 ## Start a conversation with the Telegram bot
 
@@ -344,9 +346,6 @@ You should see a confirmation in the serial monitor that the bot is active.
 - Note that it is case sensitive so if in your code you have written it with small capitals then you must also call it that way in your telegrambot otherwise you will get a message that it does not recognize the Command as below:
 <img width="350" alt="unnamed-5" src="https://github.com/user-attachments/assets/630dd026-e1a1-4418-87e4-24858c1462ab">
 
-
-
-
 - If the LED is enabled then the LED is blue if you control the LED via telegram then it is white so you can distinguish when the API is enabled or not.
 
 ## Button click
@@ -357,9 +356,6 @@ You should see a confirmation in the serial monitor that the bot is active.
 
 
  ## Demonstration
-
-<img width="600" alt="Scherm­afbeelding 2024-10-13 om 13 28 37" src="https://github.com/user-attachments/assets/bf484ee4-4156-43d4-b058-538ef3783a15">
-
 https://github.com/user-attachments/assets/bb536389-d519-4cdb-8eaa-511a18929e37
 
 
