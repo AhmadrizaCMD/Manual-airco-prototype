@@ -345,6 +345,8 @@ You should see a confirmation in the serial monitor that the bot is active.
 <img width="1394" alt="Scherm­afbeelding 2024-10-12 om 15 16 28" src="https://github.com/user-attachments/assets/fbe6b377-783f-4cbe-936f-bccc6e6f1a65">
 
 
+ ## Demonstration
+
  
 
 
