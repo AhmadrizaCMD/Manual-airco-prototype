@@ -1,4 +1,5 @@
 # Manual-airco-prototype
+## By Ahmadriza Sewruttan
 
 ## Introduction
 In this document you will learn how to control the LED using a weather API. you can also control the LED using a telegram bot and a button. learning and failure is part of it good luck!
