@@ -358,7 +358,7 @@ You should see a confirmation in the serial monitor that the bot is active.
 https://github.com/user-attachments/assets/bb536389-d519-4cdb-8eaa-511a18929e37
 
 
- ## troubleshooting Experiment summary 
+ ## Experiment summary 
 
 Managed to link the API to the LED and through the telegram bot turn the LED on and off through commands. Also managed to link the button to the LED to turn it on and off manually.
 
