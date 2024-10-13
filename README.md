@@ -60,8 +60,11 @@ make sure they are all properly connected otherwise they won't do it later when 
 3. UniversalTelegramBot: For communicating with the Telegram bot.
 4. Adafruit_neopixel.h (for operating the LED).
 - You can install these libraries through the Arduino IDE:
-1. Go to **Sketch > Include Library > Manage Libraries.** 
-2. Find the required libraries and install them.
+1. Go to **Sketch > Include Library > Manage Libraries.**
+<img width="500" alt="Scherm­afbeelding 2024-10-13 om 20 49 37" src="https://github.com/user-attachments/assets/2315fc04-4e23-495e-9f40-247db99ea2be">
+
+   
+3. Find the required libraries and install them.
 
 <img width="150" alt="Scherm­afbeelding 2024-10-12 om 16 30 24" src="https://github.com/user-attachments/assets/00d29f85-3280-4cfd-9e68-ce46e8d89957">
 
