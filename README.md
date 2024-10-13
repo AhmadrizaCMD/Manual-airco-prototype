@@ -287,7 +287,7 @@ void handleNewMessages(int numNewMessages) {
 - At **#define WIFI_SSID“”** and **#Define WIFI_PASSWORD “”** change your own wifi data
 - then put by **#define BOT_TOKEN ""** your token from the telgram bot you have make
 - By **String city = "";**  Replace with your city
-- By **String apiKey = "";**2 Replace with your OpenWeatherMap API-key
+- By **String apiKey = "";** 2 Replace with your OpenWeatherMap API-key
 <img width="500" alt="Scherm­afbeelding 2024-10-12 om 19 55 07" src="https://github.com/user-attachments/assets/8af87c4f-b09b-4ce5-828e-67480dd6da53">
 
 ## Upload de code to the ESP8266
