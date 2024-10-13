@@ -22,7 +22,7 @@ For connecting the LED to the ESP you have a table here:
 
 For connecting the Button to the ESP you have a table here:
 
-|     LED       |    ESP8266    |
+|     Button    |    ESP8266    |
 | ------------- | ------------- |
 |     Zwart     |      D1       |
 |     Rood      |     gng       |
