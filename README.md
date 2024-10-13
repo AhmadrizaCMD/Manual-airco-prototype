@@ -19,17 +19,17 @@ For connecting the LED to the ESP you have a table here:
 
 |     LED       |    ESP8266    |
 | ------------- | ------------- |
-|     Geel      |      D2       |
-|     Rood      |    3 volt     |
-|     Zwart     |     gng       |
+|     Yellow    |      D2       |
+|     Red       |    3 volt     |
+|     Black     |     gng       |
 
 
 For connecting the Button to the ESP you have a table here:
 
 |     Button    |    ESP8266    |
 | ------------- | ------------- |
-|     Zwart     |      D1       |
-|     Rood      |     gng       |
+|     Black     |      D1       |
+|     Red       |     gng       |
 
 make sure they are all properly connected otherwise they won't do it later when running code 
 
