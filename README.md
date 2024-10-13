@@ -56,23 +56,26 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 ## weather API key
 
-- ga naar [OpenWeatherMap](https://home.openweathermap.org/)
-- create een account door je gegevens in te voeren
-- Als je een account heb ga je naar de dropdown van je naam en klik je op “My API keys”
+- Go to [OpenWeatherMap](https://home.openweathermap.org/)
+- create an account by entering your details
+- If you have an account go to the dropdown of your name and click on “My API keys”
 <img width="350" alt="Scherm­afbeelding 2024-10-12 om 19 45 36" src="https://github.com/user-attachments/assets/4e097ae9-659f-4a29-bcf1-db3f164c3581">
 
-- Als je een Key wilt toevoegen dan zet je een naam hier en klik je op generate 
+- If you want to add a Key then put a name here and click generate 
 <img width="350" alt="Scherm­afbeelding 2024-10-12 om 19 49 53" src="https://github.com/user-attachments/assets/16719433-5979-4df4-9674-22b2a3874324">
 
 
-- Nu komt de API key hier te staan deze heb je later nodig
+- Now the API key appears here which you will need later
 <img width="350" alt="Scherm­afbeelding 2024-10-12 om 19 46 52" src="https://github.com/user-attachments/assets/3d08dec6-200c-40d7-ab03-aa8bb480fd7f">
 
 
 
 ## write the code
 
-- Open de Arduino IDE en ga naar File > Examples > ESP8266 > EchoBot.
+- Open de Arduino IDE and go to File > Examples > ESP8266 > EchoBot.
+<img width="400" alt="Scherm­afbeelding 2024-10-13 om 13 16 28" src="https://github.com/user-attachments/assets/7861c325-70e5-4149-ae33-4eeddd049408">
+
+  
 - remove the example code
 - Copy and paste this code:
 ```
@@ -275,10 +278,10 @@ void handleNewMessages(int numNewMessages) {
 }
 ```
 
-- At #define WIFI_SSID“” and #Define WIFI_PASSWORD “” **change your own wifi data**
-- then put by #define BOT_TOKEN "" **your token from the telgram bot you have make**
-- By String city = "";  **Replace with your city**
-- By String apiKey = ""; **Replace with your OpenWeatherMap API-key**
+- At **#define WIFI_SSID“”** and **#Define WIFI_PASSWORD “”** change your own wifi data
+- then put by **#define BOT_TOKEN ""** your token from the telgram bot you have make
+- By **String city = "";**  Replace with your city
+- By **String apiKey = "";**2 Replace with your OpenWeatherMap API-key
 <img width="500" alt="Scherm­afbeelding 2024-10-12 om 19 55 07" src="https://github.com/user-attachments/assets/8af87c4f-b09b-4ce5-828e-67480dd6da53">
 
 ## Upload de code to the ESP8266
@@ -324,6 +327,15 @@ If all goes well, the LED is now connected to the API and if the temperature is 
 - Start a chat with your bot in Telegram.
 You should see a confirmation in the serial monitor that the bot is active.
 - Now if you write “airco off” in the Telegram bot then the LED would now turn off and you will see in the serial monitor that this it is actually off. If you want to turn it on again then write “airco on”. - Note that if you write “airco off” then the API is no longer active. If you want to activate the API again then write “API” then the API is on again and the LED turns blue at the given value.
+<img width="350" alt="unnamed-6" src="https://github.com/user-attachments/assets/53accb1b-c918-4ec0-bfc1-d1870dfc574d">
+
+
+- Note that it is case sensitive so if in your code you have written it with small capitals then you must also call it that way in your telegrambot otherwise you will get a message that it does not recognize the Command as below:
+<img width="350" alt="unnamed-5" src="https://github.com/user-attachments/assets/630dd026-e1a1-4418-87e4-24858c1462ab">
+
+
+
+
 - If the LED is enabled then the LED is blue if you control the LED via telegram then it is white so you can distinguish when the API is enabled or not.
 
 ## Button click
