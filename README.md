@@ -9,6 +9,8 @@ In this document you will learn how to control the LED using a weather API. you 
 - LED
 - Button
 - Laptop
+- phone
+- Wires 
 
 ## Connecting Hardware
 For connecting the LED to the ESP you have a table here:
