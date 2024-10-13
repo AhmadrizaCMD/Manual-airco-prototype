@@ -364,6 +364,7 @@ Managed to link the API to the LED and through the telegram bot turn the LED on 
 
 The only thing now is that the LED now turns on and off with a Delay. I tried reducing the Delay that worked a little better but still not as smooth. It could also be that because the esp8266 works with 3 volts that it then works it with less current and that is why it displays a Delay.
 
+And as stated above you must properly enter all your data in the code such as the wifi data otherwise the esp8266 does not Connect. Also you have to check if you have copied the correct API key otherwise there is no connection with the API and lastly check if you have linked the correct bot token of your telegram bot otherwise the commands will not work. 
 
 
 
