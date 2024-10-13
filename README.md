@@ -13,7 +13,7 @@ In this document you will learn how to control the LED using a weather API. you 
 - phone
 - Wires 
 
-## Connecting Hardware
+## Step 1 Connecting Hardware
 For connecting the LED to the ESP you have a table here:
 
 |     LED       |    ESP8266    |
@@ -39,11 +39,11 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 
 
-## make a Telegram account
+## Step 2 make a Telegram account
 - Download the Telegram app on your smartphone or use the desktop version.
 - Create an account by registering your phone number and following the instructions.
 
-## make a Telegram bot
+## Step 3 make a Telegram bot
 - Search for the bot named BotFather in the Telegram app.
 - Start a chat with BotFather and follow the instructions to create a new bot(start conversation with the bot and make up a name for your bot that is not already in use). if a name is already in use you will see a notification like below that it is already in use and then you can make up another name.
 <img width="303" alt="Scherm­afbeelding 2024-10-13 om 20 55 01" src="https://github.com/user-attachments/assets/1bf65348-572d-4be9-80cd-80bd64b8f8d5">
@@ -59,7 +59,7 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 
 
-## Install the libraries
+## Step 4 Install the libraries
 - Make sure you have the appropriate Arduino libraries installed. You need at least the following libraries:
 1. ESP8266WiFi: For connecting to WiFi.
 2. WiFiClientSecure: For secure connections.
@@ -74,7 +74,7 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 <img width="150" alt="Scherm­afbeelding 2024-10-12 om 16 30 24" src="https://github.com/user-attachments/assets/00d29f85-3280-4cfd-9e68-ce46e8d89957">
 
-## weather API key
+## Step 5 weather API key
 
 - Go to [OpenWeatherMap](https://home.openweathermap.org/)
 - create an account by entering your details
@@ -90,7 +90,7 @@ make sure they are all properly connected otherwise they won't do it later when 
 
 
 
-## write the code
+## Step 6 write the code
 
 - Open de Arduino IDE and go to File > Examples > ESP8266 > EchoBot.
 <img width="400" alt="Scherm­afbeelding 2024-10-13 om 13 16 28" src="https://github.com/user-attachments/assets/7861c325-70e5-4149-ae33-4eeddd049408">
@@ -304,7 +304,7 @@ void handleNewMessages(int numNewMessages) {
 - By **String apiKey = "";** 2 Replace with your OpenWeatherMap API-key
 <img width="500" alt="Scherm­afbeelding 2024-10-12 om 19 55 07" src="https://github.com/user-attachments/assets/8af87c4f-b09b-4ce5-828e-67480dd6da53">
 
-## Upload de code to the ESP8266
+## step 7 Upload de code to the ESP8266
 - Connect your ESP8266 to the computer.
 - Choose the correct board and port in the Arduino IDE. (**tools> board > esp8266 > NodeMCU 1.0 (module12)**)
 <img width="500" alt="Scherm­afbeelding 2024-10-12 om 19 59 58" src="https://github.com/user-attachments/assets/a0bcf700-d5f6-4d0d-92e5-544ee66f5bd0">
@@ -314,7 +314,7 @@ void handleNewMessages(int numNewMessages) {
 
 
 
-## open the serial monitor
+## Step 8 open the serial monitor
 
 - Open the serial monitor in the Arduino IDE by clicking right above on the magnifying glass.
 <img width="601" alt="Scherm­afbeelding 2024-10-12 om 20 08 00" src="https://github.com/user-attachments/assets/2e3bcaf3-bfcd-43fd-b98e-6e15001d775f">
@@ -327,7 +327,7 @@ void handleNewMessages(int numNewMessages) {
 - Check if any error messages appear. If any strange characters appear, check your WiFi credentials:
 - Make sure you have entered the correct SSID and password.
 
-## fix errors troubleshooting:
+## Step 9 fix errors troubleshooting:
 If no connection is made to the esp8266 check the following:
 
 - check that you have entered the correct wifi data
@@ -338,13 +338,13 @@ If the API is not working then in the serial monitor you will see “client not 
 - if you copied and pasted the correct API key. 
 - Otherwise create a new key and try that.
 
-## LED on API
+## Step  10 LED on API
 
 If all goes well, the LED is now connected to the API and if the temperature is above this many degrees the LED turns blue. you can see in the serial monitor it says it is connected to the esp8266 and it is connected to the API “connection to weather server”.
 
 <img width="600" alt="Scherm­afbeelding 2024-10-13 om 13 28 37" src="https://github.com/user-attachments/assets/bf484ee4-4156-43d4-b058-538ef3783a15">
 
-## Start a conversation with the Telegram bot
+## step 11 Start a conversation with the Telegram bot
 
 - Start a chat with your bot in Telegram.
 You should see a confirmation in the serial monitor that the bot is active.
@@ -357,14 +357,14 @@ You should see a confirmation in the serial monitor that the bot is active.
 
 - If the LED is enabled then the LED is blue if you control the LED via telegram then it is white so you can distinguish when the API is enabled or not.
 
-## Button click
+## Step 12 Button click
 
 - If the API is disabled then you could manually press the button so that it comes back on. Note that the API is then disabled and the LED turns white in color.
 
 <img width="1394" alt="Scherm­afbeelding 2024-10-12 om 15 16 28" src="https://github.com/user-attachments/assets/fbe6b377-783f-4cbe-936f-bccc6e6f1a65">
 
 
- ## Demonstration
+ ## Step 13 Demonstration
 https://github.com/user-attachments/assets/bb536389-d519-4cdb-8eaa-511a18929e37
 
 
